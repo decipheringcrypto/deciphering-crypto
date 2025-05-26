@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Deciphering Crypto</title>
+  <meta name="description" content="Explore crypto, DeFi, and AI through deep-dive blog posts from Deciphering Crypto." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Deciphering Crypto Blog" />
+  <meta property="og:description" content="Clear, insightful breakdowns of crypto, AI, and blockchain topics." />
+  <meta property="og:image" content="assets/og-blog.jpg" />
+  <meta property="og:url" content="https://www.deciphering-crypto.com/blog.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+<body>
+  <header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="assets/logo.png" alt="Deciphering Crypto site logo linking to homepage" />
+    </a>
+  </div>
+  <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">☰</button>
+  <nav id="main-nav" class="menu-collapsed">
+    <a href="index.html#home">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://www.youtube.com/@decipheringcrypto4523">YouTube</a>
+    <a href="https://x.com/Dec1pherCrypto">X</a>
+    <a href="index.html#work-with-us">Work With Us</a>
+    <a href="https://www.shaylammons.com/">My Personal Site</a>
+  </nav>
+</header>
+
+  <main>
+    <section class="hero">
+      <h1>Explore the Deciphering Crypto Blog</h1>
+      <p>Dive deeper into the projects we cover — insights, breakdowns, and behind-the-scenes analysis.</p>
+    </section>
+
+    <section class="blog">
+      <div class="blog-previews">
+        <!-- Glades.AI Blog Card -->
+        <div class="blog-card">
+          <a href="glades-ai-blog.html" class="blog-link">
+            <img loading="lazy" src="assets/glades-ai-preview.jpg" alt="Glades.AI Blog Preview" style="width: 100%; border-radius: 12px;" />
+            <h3>Glades.AI Review – Gamify AI Training with $GLDS</h3>
+            <p>
+              Explore how Glades.AI is turning gaming into AI training — and rewarding users in $GLDS tokens. A bold new approach to crowdsourced intelligence.
+            </p>
+          </a>
+        </div>
+        <div class="blog-card">
+          <a href="gems-blog.html" class="blog-link">
+            <img loading="lazy" src="assets\GEMS-BlogCard2.png" alt="Gems.vip Blog Preview" />
+            <h3>Gems.VIP – A Launchpad for Early-Stage Crypto Investing</h3>
+            <p>
+            Discover how Gems.VIP empowers early-stage crypto investors with a curated launchpad, community governance, and risk-mitigating features.
+            </p>
+          </a>
+        </div>
+
+        <!-- XRP Blog Card Placeholder -->
+        <div class="blog-card">
+          <a href="ripple-xrp-blog.html" class="blog-link">
+            <img loading="lazy" src="assets/xrp-logo_preview.jpg" alt="Ripple XRP Blog Preview" style="width: 100%; border-radius: 12px;" />
+            <h3>Ripple XRP – The Backbone of Blockchain Banking?</h3>
+            <p>
+              A deep dive into Ripple’s real-world adoption, global partnerships, and why XRP has one of the most passionate communities in crypto.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-links">
+      <a href="https://www.youtube.com/@decipheringcrypto4523">YouTube</a>
+      <a href="https://x.com/Dec1pherCrypto">X</a>
+      <a href="https://medium.com/@scegsinc">Medium</a>
+      <a href="mailto:decipheringcrypto@protonmail.com">Email</a>
+    </div>
+    <p>&copy; 2025 Deciphering Crypto. All rights reserved.</p>
+    <section class="newsletter-signup">
+        <form action="https://buttondown.email/api/emails/embed-subscribe/DecipheringCrypto" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/DecipheringCrypto', 'popupwindow')" style="padding-top: 2rem; text-align: center;">
+          <label for="bd-email" style="font-size: 1.1rem; font-weight: bold;">📬 Subscribe for updates</label><br>
+          <input type="email" name="email" id="bd-email" placeholder="Your email address" required
+            style="padding: 0.5rem; width: 250px; border-radius: 8px; border: 1px solid #ccc; margin-top: 0.5rem;">
+          <button type="submit"
+            style="padding: 0.5rem 1rem; margin-left: 0.5rem; background: var(--accent); border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Subscribe</button>
+        </form>
+    </section>
+</footer>
+  <script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('main-nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('menu-collapsed');
+    nav.classList.toggle('menu-expanded');
+
+     // Toggle aria-expanded value
+    const expanded = nav.classList.contains('menu-expanded');
+    menuToggle.setAttribute('aria-expanded', expanded);
+  });
+  </script>
+</body>
+</html>
