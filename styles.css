@@ -40,7 +40,7 @@
   }
 
   .logo img {
-    height: 48px;
+    height: 64px;
     width: auto;
     display: block;
   }
@@ -262,6 +262,27 @@ nav.menu-expanded {
   }
   
   @media (max-width: 768px) {
+    .logo img {
+    height: 64px;
+    }
+
+    .hero {
+     max-width: 90%;
+     padding: 3rem 1rem;
+     margin: 0 auto;
+     text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+      
     nav {
       flex-wrap: wrap;
       justify-content: center;
