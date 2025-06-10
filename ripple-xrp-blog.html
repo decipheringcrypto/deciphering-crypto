@@ -29,7 +29,7 @@
     <a href="blog.html">Blog</a>
     <a href="https://www.youtube.com/@decipheringcrypto4523">YouTube</a>
     <a href="https://x.com/Dec1pherCrypto">X</a>
-    <a href="#" onclick="scrollToWork()">Work With Us</a>
+    <a href="#" onclick="handleWorkClick(event)">Work With Us</a>
     <a href="https://www.shaylammons.com/">My Personal Site</a>
   </nav>
 </header>
@@ -108,15 +108,38 @@
     });
   </script>
   <script>
-    function scrollToWork() {
-      const isIndex = window.location.pathname.includes("index.html") || window.location.pathname === "/";
-      if (isIndex) {
-        const section = document.querySelector("#work-with-us");
-        section?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        window.location.href = "index.html#work-with-us";
-      }
+  function handleWorkClick(event) {
+    event.preventDefault();
+
+    const isIndex = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname === "/deciphering-crypto/";
+    
+    if (isIndex) {
+      // Scroll locally if already on homepage
+      setTimeout(() => {
+        const target = document.querySelector("#work-with-us");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300); // Allow animations to settle
+    } else {
+      // Save a flag in sessionStorage so we scroll once the homepage loads
+      sessionStorage.setItem("scrollToWork", "true");
+      window.location.href = "index.html";
     }
-  </script>
+  }
+
+  // Scroll to Work With Us after navigating to homepage if needed
+  window.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("scrollToWork") === "true") {
+      sessionStorage.removeItem("scrollToWork");
+      setTimeout(() => {
+        const target = document.querySelector("#work-with-us");
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 500); // Wait a bit longer to allow GSAP to initialize
+    }
+  });
+</script>
 </body>
 </html>
