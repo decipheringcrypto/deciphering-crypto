@@ -150,77 +150,88 @@
     nav.classList.toggle('menu-collapsed');
     nav.classList.toggle('menu-expanded');
 
-     // Toggle aria-expanded value
     const expanded = nav.classList.contains('menu-expanded');
     menuToggle.setAttribute('aria-expanded', expanded);
   });
-  </script>
-  <!-- GSAP & ScrollTrigger CDN -->
-  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
+  const skipSponsorAnimation = sessionStorage.getItem("scrollToWork") === "true";
+</script>
 
-    const isMobile = window.innerWidth <= 768;
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-    if (!isMobile) {
-      const sections = [".hero", ".video", ".blog", ".creator", ".sponsorship"];
+<script>
+  gsap.registerPlugin(ScrollTrigger);
 
-      sections.forEach((selector, i) => {
-        gsap.from(selector, {
-          opacity: 0,
-          y: 80,
-          duration: 1,
-          delay: i * 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: selector,
-            start: "top 70%",
-            toggleActions: "play reverse play reverse"
-          }
-        });
+  const isMobile = window.innerWidth <= 768;
+
+  const sections = [".hero", ".video", ".blog", ".creator", ".sponsorship"];
+  const visibleSections = document.querySelectorAll(sections.join(", "));
+
+  if (!isMobile && !skipSponsorAnimation) {
+    sections.forEach((selector, i) => {
+      gsap.from(selector, {
+        opacity: 0,
+        y: 80,
+        duration: 1,
+        delay: i * 0.2,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: selector,
+          start: "top 70%",
+          toggleActions: "play reverse play reverse"
+        }
       });
-    } else {
-      // Make sure everything is visible on mobile
-      const visibleSections = document.querySelectorAll(".hero, .video, .blog, .creator, .sponsorship");
-      visibleSections.forEach(section => {
-        section.style.opacity = "1";
-        section.style.transform = "none";
-      });
-    }
-  </script>
-  <script>
+    });
+  } else {
+    // On mobile or skipping sponsorship animation
+    visibleSections.forEach(section => {
+      section.style.opacity = "1";
+      section.style.transform = "none";
+    });
+  }
+</script>
+
+<script>
   function handleWorkClick(event) {
     event.preventDefault();
 
-    const isIndex = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname === "/deciphering-crypto/";
-    
+    const isIndex = window.location.pathname.includes("index.html") ||
+                    window.location.pathname === "/" ||
+                    window.location.pathname === "/deciphering-crypto/";
+
     if (isIndex) {
-      // Scroll locally if already on homepage
       setTimeout(() => {
         const target = document.querySelector("#work-with-us");
         if (target) {
           target.scrollIntoView({ behavior: "smooth" });
         }
-      }, 300); // Allow animations to settle
+      }, 300);
     } else {
-      // Save a flag in sessionStorage so we scroll once the homepage loads
       sessionStorage.setItem("scrollToWork", "true");
       window.location.href = "index.html";
     }
   }
 
-  // Scroll to Work With Us after navigating to homepage if needed
-  window.addEventListener("DOMContentLoaded", () => {
-    if (sessionStorage.getItem("scrollToWork") === "true") {
+  window.addEventListener("load", () => {
+    if (skipSponsorAnimation) {
       sessionStorage.removeItem("scrollToWork");
-      setTimeout(() => {
+
+      // Disable GSAP scroll triggers for sponsorship if they exist
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.trigger && trigger.trigger.classList.contains("sponsorship")) {
+          trigger.kill();
+        }
+      });
+
+      requestAnimationFrame(() => {
         const target = document.querySelector("#work-with-us");
         if (target) {
+          target.style.opacity = "1";
+          target.style.transform = "none";
           target.scrollIntoView({ behavior: "smooth" });
         }
-      }, 500); // Wait a bit longer to allow GSAP to initialize
+      });
     }
   });
 </script>
