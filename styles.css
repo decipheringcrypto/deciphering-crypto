@@ -197,6 +197,38 @@ nav.menu-expanded {
   height: 100%;
 }
 
+/* Additional styles for blog formatting */
+.blog-post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.blog-title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.blog-date {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.blog-article {
+  text-align: left;
+  margin-top: 2rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .blog-title {
+    font-size: 1.75rem;
+  }
+}
+
   /* --- Work With Us Section --- */
 .sponsorship {
   padding: 4rem 2rem;
