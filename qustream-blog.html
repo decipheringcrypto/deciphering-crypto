@@ -145,16 +145,52 @@
       </form>
     </section>
   </footer>
-
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('main-nav');
+
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('menu-collapsed');
       nav.classList.toggle('menu-expanded');
+
+      // Toggle aria-expanded value
       const expanded = nav.classList.contains('menu-expanded');
       menuToggle.setAttribute('aria-expanded', expanded);
     });
+    </script>
+    <script>
+      function handleWorkClick(event) {
+        event.preventDefault();
+
+        const isIndex = window.location.pathname.includes("index.html") || window.location.pathname === "/" || window.location.pathname === "/deciphering-crypto/";
+    
+        if (isIndex) {
+          // Scroll locally if already on homepage
+          setTimeout(() => {
+            const target = document.querySelector("#work-with-us");
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 300); // Allow animations to settle
+        } else {
+          // Save a flag in sessionStorage so we scroll once the homepage loads
+          sessionStorage.setItem("scrollToWork", "true");
+          window.location.href = "index.html";
+        }
+      }
+
+      // Scroll to Work With Us after navigating to homepage if needed
+      window.addEventListener("DOMContentLoaded", () => {
+        if (sessionStorage.getItem("scrollToWork") === "true") {
+          sessionStorage.removeItem("scrollToWork");
+          setTimeout(() => {
+            const target = document.querySelector("#work-with-us");
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
+          }, 500); // Wait a bit longer to allow GSAP to initialize
+        }
+      });
   </script>
 </body>
 </html>
