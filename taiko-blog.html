@@ -41,62 +41,69 @@
 
     <article class="blog-article">
       <h2>Introduction</h2>
-      <p>Taiko is an ambitious Layer-2 project bringing scalability to Ethereum without compromising decentralization or compatibility...</p>
+      <p>Taiko is one of the most Ethereum-aligned Layer-2 scaling solutions to hit the crypto ecosystem in 2025. Built with a focus on compatibility, decentralization, and long-term adaptability, Taiko delivers a Type-1 ZK-EVM that mirrors Ethereum byte-for-byte. This means Ethereum developers don’t need to change anything to build on Taiko — they get scalability, lower fees, and faster speeds, all while preserving the Ethereum user experience and security. But Taiko isn't just about being another rollup; it's an attempt to scale Ethereum without compromise. This blog explores how it works, what makes it different, and why it could become Ethereum’s default Layer-2 experience in the near future.</p>
 
       <h2>What Problem Does Taiko Solve?</h2>
-      <p>Ethereum’s biggest bottlenecks have long been high gas fees and limited throughput...</p>
+      <p>Ethereum is powerful and secure, but not without limits. As usage has increased, so have gas fees and confirmation times. While Layer-2 solutions have emerged to solve this, many require developers to adapt to new environments or trust centralized sequencers. Others sacrifice some Ethereum compatibility or introduce complicated bridging mechanisms. Taiko addresses this by being 100% Ethereum-equivalent while using zero-knowledge proofs for scalability and decentralization. That means all existing tools, wallets, and contracts work natively — and developers and users alike don’t have to change a thing.</p>
 
       <h2>Top 3 Standout Features</h2>
       <h3>1. Ethereum Equivalence</h3>
-      <p>Taiko is a Type-1 ZK-EVM — meaning it doesn’t change anything about Ethereum’s execution layer...</p>
+      <p>Taiko is a Type-1 ZK-EVM — the highest level of compatibility with Ethereum. It replicates Ethereum’s execution environment perfectly, opcode for opcode. This is crucial because it means developers can copy and paste existing Ethereum apps to Taiko with no rewriting or retooling. That preserves composability and innovation speed, ensuring Ethereum dApps can instantly scale without fragmentation.</p>
 
       <h3>2. Decentralized Sequencing</h3>
-      <p>Unlike many rollups that rely on a centralized sequencer... Taiko uses Ethereum’s validators to determine transaction order...</p>
+      <p>Most rollups today rely on a centralized sequencer — a single actor that decides the order of transactions. This creates a potential censorship risk, performance bottleneck, and even security issues if the sequencer goes offline or misbehaves.</p>
+      <p>Taiko solves this with a decentralized sequencing design known as a “based rollup.” Instead of a central operator, it uses Ethereum validators themselves to sequence transactions. Anyone can propose or prove blocks on Taiko, and Ethereum handles the ordering through its own consensus process. This makes Taiko uniquely resistant to censorship and downtime, aligning it with Ethereum's trust-minimized principles.</p>
 
       <h3>3. Future-Proof Architecture</h3>
-      <p>Taiko is built with modularity in mind and supports evolving zk-proof systems...</p>
+      <p>Taiko’s modular design isn’t locked into a single cryptographic system. As ZK-proof technology evolves, Taiko can plug in more efficient or secure proof schemes without overhauling its architecture. It also supports “multi-proofs” and plans to introduce “app chains” that run their own customized proofs.</p>
+      <p>In 2025, Taiko will launch its “Gwyneth” upgrade — a major step forward. Gwyneth enables synchronous composability with Ethereum. That means a smart contract on Taiko can interact with a smart contract on Ethereum Layer-1 in near real-time. This tight coupling unlocks complex DeFi flows and new app possibilities that previously required slow bridges or cross-chain hacks.</p>
 
       <h2>Security: Contestable Proofs + Ethereum Finality</h2>
-      <p>Taiko implements a game-theoretic contestation mechanism for bad proofs and uses Ethereum for finality...</p>
+      <p>Every Taiko transaction is secured by a ZK-proof that Ethereum verifies. But there’s a second line of defense: the network allows anyone to contest a bad proof by submitting a better one. This contestable proof system creates a crypto-economic game where the truth wins out. Provers must stake bonds in $TAIKO, and bad actors are penalized.</p>
+      <p>Because Ethereum is the final verifier, Taiko benefits from Ethereum’s security guarantees. And with contestation and bonding, the protocol ensures only correct blocks get finalized. This dual system — on-chain proof + public verification — is what makes Taiko’s security uniquely robust.</p>
 
       <h2>User Experience</h2>
-      <p>Users connect their MetaMask, bridge ETH, and interact with dApps just like they would on Ethereum...</p>
+      <p>For the average user, Taiko feels exactly like Ethereum — but faster and cheaper. Users connect their MetaMask wallet, bridge ETH using a clean UI, and can immediately begin trading, minting, and participating in dApps. Gas fees are often less than $0.05, and transactions confirm in seconds instead of minutes.</p>
+      <p>Taiko hosts over 150 dApps on its testnets and mainnet combined. From DeFi protocols to NFT marketplaces, developers have migrated to Taiko for its scalability and user-friendliness. Bridging back to Ethereum is also fast — no week-long delays like Optimistic rollups. Thanks to the use of validity proofs, withdrawals are processed as soon as Ethereum confirms the proof.</p>
 
-      <h2>The $TAIKO Token</h2>
+      <h2>$TAIKO Token Utility</h2>
       <ul>
-        <li><strong>Bonding:</strong> Actors stake TAIKO to propose/prove blocks</li>
-        <li><strong>Incentives:</strong> Earn TAIKO for honest activity</li>
-        <li><strong>Governance:</strong> Vote on upgrades and treasury usage</li>
+        <li><strong>Proposer Bonds:</strong> Required to prevent spam.</li>
+        <li><strong>Proof Incentives:</strong> Earned for generating valid ZK-proofs.</li>
+        <li><strong>Contestation Stakes:</strong> Posted by challengers who detect invalid blocks.</li>
+        <li><strong>Governance:</strong> Vote on protocol upgrades, economic models, and treasury use.</li>
+        <li><strong>Potential Use Cases:</strong> Could be used for gas or staking incentives in future proposals.</li>
       </ul>
 
       <h2>Tokenomics Breakdown</h2>
       <ul>
-        <li>16% Airdrops</li>
-        <li>20% Team (vested)</li>
-        <li>12% Investors</li>
-        <li>22% DAO Treasury</li>
-        <li>17% Foundation Reserves</li>
-        <li>5% Grants / Public Goods</li>
-        <li>5% Liquidity</li>
-        <li>3.5% Bonding Pool</li>
+        <li>16% Airdropped to early users</li>
+        <li>20% to core team & advisors (vested)</li>
+        <li>12% to strategic investors</li>
+        <li>22% DAO-controlled treasury</li>
+        <li>17% Taiko Foundation</li>
+        <li>5% Public goods grants</li>
+        <li>5% Liquidity and market support</li>
+        <li>3.5% Guardian/Prover pools</li>
       </ul>
 
-      <h2>Roadmap: 2024–2025</h2>
+      <h2>Roadmap 2024–2025</h2>
       <ul>
-        <li><strong>Q4 2024:</strong> Full zkEVM proof integration</li>
-        <li><strong>Q1 2025:</strong> Gwyneth testnet release</li>
-        <li><strong>Q2 2025:</strong> Decentralized Security Council</li>
-        <li><strong>Q3–Q4 2025:</strong> Pre-confirmations on testnet + mainnet</li>
+        <li><strong>Q2 2024:</strong> Mainnet launch & Genesis Airdrop</li>
+        <li><strong>Q4 2024:</strong> zkEVM upgrades with full proof integration</li>
+        <li><strong>Q1 2025:</strong> Gwyneth upgrade (testnet)</li>
+        <li><strong>Q2 2025:</strong> Decentralized Security Council launch</li>
+        <li><strong>Q3–Q4 2025:</strong> Pre-confirmations on testnet and mainnet</li>
       </ul>
 
-      <h2>Team & Backers</h2>
-      <p>Founded by Daniel Wang (Loopring), backed by Sequoia, Lightspeed, Hashed, Ethereum Foundation...</p>
+      <h2>Team & Supporters</h2>
+      <p>Taiko was founded by Daniel Wang (Loopring) and includes engineers from the Ethereum Foundation and StarkWare. The project has raised $37M in funding and is backed by Sequoia China, Lightspeed Faction, Hashed, and the Ethereum Foundation.</p>
 
       <h2>Community & Ecosystem</h2>
-      <p>1M+ Discord members, DAO-led roadmap, active testnet participants, dApp grants, explorer & bridge support...</p>
+      <p>With over 1 million Discord users, Taiko has one of the most active Layer-2 communities in crypto. It hosts governance AMAs, grants programs, and bug bounties. Over 40 ecosystem projects are currently building on Taiko with support from the DAO treasury.</p>
 
       <h2>Conclusion – Ethereum, Enhanced</h2>
-      <p>Taiko could become Ethereum’s default experience at scale. Fast, secure, and governed by the community...</p>
+      <p>Taiko is not just a rollup — it's Ethereum, enhanced. With its focus on compatibility, decentralization, and zero-knowledge security, it brings Ethereum into a future of scalable, secure, low-cost infrastructure without losing what makes Ethereum special. If you care about Ethereum's values and future, Taiko is a project worth watching closely in 2025 and beyond.</p>
     </article>
 
     <div style="text-align: center; margin-top: 3rem;">
